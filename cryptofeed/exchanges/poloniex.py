@@ -69,7 +69,7 @@ class Poloniex(Feed):
         }
         """
         price = Decimal(msg['data'][0]['price'])
-        amount = Decimal(msg['data'][0]['amount'])
+        amount = Decimal(msg['data'][0]['quantity'])
         t = Trade(
             msg['data'][0]['id'],
             self.exchange_symbol_to_std_symbol(msg['data'][0]['symbol']),

@@ -81,7 +81,7 @@ class HuobiSwap(HuobiDM):
                 endpoint = None
                 for ep in self.rest_endpoints:
                     if sym.quote in ep.instrument_filter[1]:
-                        endpoint = self.rest_endpoints[0].route('funding').format(pair)
+                        endpoint = ep.route('funding').format(pair)
 
                 data = await self.http_conn.read(endpoint)
                 data = json.loads(data, parse_float=Decimal)
@@ -97,13 +97,14 @@ class HuobiSwap(HuobiDM):
                     self.exchange_symbol_to_std_symbol(pair),
                     None,
                     Decimal(data['data']['funding_rate']),
-                    self.timestamp_normalize(int(data['data']['next_funding_time'])),
                     self.timestamp_normalize(int(data['data']['funding_time'])),
+                    self.timestamp_normalize(int(data['ts'])),
                     predicted_rate=Decimal(data['data']['estimated_rate']),
                     raw=data
                 )
                 await self.callback(FUNDING, f, received)
                 await asyncio.sleep(0.1)
+            await asyncio.sleep(60)
 
     async def subscribe(self, conn: AsyncConnection):
         if FUNDING in self.subscription:
