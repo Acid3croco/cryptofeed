@@ -49,9 +49,9 @@ OKCOIN = 'OKCOIN'
 OKX = 'OKX'
 PHEMEX = 'PHEMEX'
 POLONIEX = 'POLONIEX'
+POLONIEX_FUTURES = 'POLONIEX_FUTURES'
 PROBIT = 'PROBIT'
 UPBIT = 'UPBIT'
-
 
 # Market Data
 L1_BOOK = 'l1_book'
@@ -129,13 +129,10 @@ CALL = 'call'
 PUT = 'put'
 FX = 'fx'
 
-
 # HTTP methods
 GET = 'GET'
 DELETE = 'DELETE'
 POST = 'POST'
-
-
 """
 L2 Orderbook Layout
     * BID and ASK are SortedDictionaries

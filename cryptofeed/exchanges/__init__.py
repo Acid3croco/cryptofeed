@@ -46,6 +46,7 @@ from .kucoin import KuCoin
 from .okx import OKX
 from .okcoin import OKCoin
 from .poloniex import Poloniex
+from .poloniex_futures import PoloniexFutures
 from .probit import Probit
 from .upbit import Upbit
 
@@ -91,6 +92,7 @@ EXCHANGE_MAP = {
     OKX_str: OKX,
     PHEMEX: Phemex,
     POLONIEX: Poloniex,
+    POLONIEX_FUTURES: PoloniexFutures,
     PROBIT: Probit,
     UPBIT: Upbit,
 }
