@@ -504,16 +504,17 @@ class Deribit(Feed, DeribitRestMixin):
                     "jsonrpc" : "2.0"
                 }
                 '''
+                print(msg)
                 oi = OrderInfo(
                     self.id,
                     self.exchange_symbol_to_std_symbol(data['instrument_name']),
                     data["order_id"],
-                    BUY if msg["side"] == 'Buy' else SELL,
+                    BUY if data["direction"] == 'buy' else SELL,
                     order_status[data["order_state"]],
                     order_types[data['order_type']],
                     Decimal(data['price']),
                     Decimal(data['filled_amount']),
-                    Decimal(data['amount']) - Decimal(data['cumQuantity']),
+                    Decimal(data['amount']) - Decimal(data['filled_amount']),
                     self.timestamp_normalize(data["last_update_timestamp"]),
                     raw=data
                 )
