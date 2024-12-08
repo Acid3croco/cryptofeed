@@ -15,6 +15,7 @@ from .binance import Binance
 from .binance_delivery import BinanceDelivery
 from .binance_futures import BinanceFutures
 from .binance_us import BinanceUS
+from .binance_tr import BinanceTR
 from .fmfw import FMFW
 from .bitfinex import Bitfinex
 from .bitflyer import Bitflyer
@@ -42,8 +43,8 @@ from .independent_reserve import IndependentReserve
 from .kraken import Kraken
 from .kraken_futures import KrakenFutures
 from .kucoin import KuCoin
-from .okcoin import OKCoin
 from .okx import OKX
+from .okcoin import OKCoin
 from .poloniex import Poloniex
 from .poloniex_futures import PoloniexFutures
 from .probit import Probit
@@ -57,6 +58,7 @@ EXCHANGE_MAP = {
     BINANCE_DELIVERY: BinanceDelivery,
     BINANCE_FUTURES: BinanceFutures,
     BINANCE_US: BinanceUS,
+    BINANCE_TR: BinanceTR,
     BINANCE: Binance,
     FMFW_str: FMFW,
     BITDOTCOM: BitDotCom,

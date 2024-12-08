@@ -1,6 +1,15 @@
 ## Changelog
 
-### 2.3.2
+### 2.4.0
+ * Update: Fix tests
+ * Update: Okcoin moved to v5 API used by OKX
+ * Bugfix: InfluxDB none type conversions
+ * New Exchange: GateIO Futures
+ * Bugfix: Fix instrument types in symbol parsing on Bitmex
+ * Bugfix: fix crash issue when init symbol data on Kraken Futures
+
+### 2.3.2 (2023-05-27)
+ * Bugfix: Fix Socket backend
  * Bugfix: Fix AUCTION symbol parsing on Coinbase
  * Bugfix: Fix PERPETUAL symbol parsing on Phemex
  * Bugfix: Fix PERPETUAL symbol parsing on Kraken Futures
@@ -8,6 +17,9 @@
  * Feature: Use backend Queue for Kafka
  * Feature: Add support for storing book snapshots in Redis as key-value
  * Update: Switch from unmaintained aioredis to redis-py
+ * Bugfix: Correct value for Crypto.com Ask price
+ * Update: Remove cChardet dependency
+ * Feature: Binance TR support
 
 ### 2.3.1 (2022-10-31)
  * Bugfix: timestamp not reset correctly on reconnect

@@ -46,7 +46,7 @@ extension = Extension("cryptofeed.types", ["cryptofeed/types.pyx"],
 setup(
     name="cryptofeed",
     ext_modules=cythonize([extension], language_level=3, force=True),
-    version="2.3.2",
+    version="2.4.0",
     author="Bryant Moscon",
     author_email="bmoscon@gmail.com",
     description="Cryptocurrency Exchange Websocket Data Feed Handler",
@@ -77,14 +77,12 @@ setup(
         "requests>=2.18.4",
         "websockets>=10.0",
         "pyyaml",
-        "aiohttp==3.8.4",
+        "aiohttp==3.8.5",
         "aiofile>=2.0.0",
         "yapic.json>=1.6.3",
         'uvloop ; platform_system!="Windows"',
-        # Two (optional) dependencies that speed up Cryptofeed:
-        "aiodns>=1.1",  # aiodns speeds up DNS resolving
-        "cchardet",  # cchardet is a faster replacement for chardet
-        "order_book>=0.6.0"
+        "order_book>=0.6.0",
+        "aiodns>=1.1"  # aiodns speeds up DNS resolving
     ],
     extras_require={
         "arctic": ["arctic", "pandas"],
